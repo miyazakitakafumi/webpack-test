@@ -1,5 +1,5 @@
 const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+// const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
     mode: 'development',
@@ -14,7 +14,8 @@ module.exports = {
         port: '3000',
         hot:true,
         open:true,
-        // contentBase: path.resolve(__dirname,'dist')
+        contentBase: path.resolve(__dirname,'dist'),
+        publicPath: path.resolve(__dirname,'/assets/'),
     },
 
     module: {
@@ -27,9 +28,9 @@ module.exports = {
         ]
     },
     plugins: [
-        new HtmlWebpackPlugin({
-            template: './src/index.html'
-        })
+        // new HtmlWebpackPlugin({
+        //     template: './src/index.html'
+        // })
     ],
 
     // resolve: {
